@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Heating & Air Conditioning LLC | Premier HVAC Services</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brandRed: '#E63946',
+                        brandBlue: '#0077B6',
+                        brandIce: '#90E0EF',
+                        darkNavy: '#0A0F1D',
+                        glassBg: 'rgba(15, 23, 42, 0.75)',
+                    },
+                    boxShadow: {
+                        'neon-red': '0 0 25px rgba(230, 57, 70, 0.4)',
+                        'neon-blue': '0 0 25px rgba(0, 119, 182, 0.4)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 4s infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%': { opacity: '0.3', transform: 'scale(1)' },
+                            '100%': { opacity: '0.6', transform: 'scale(1.05)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Glassmorphism & Animations */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 119, 182, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 119, 182, 0.25);
+        }
+
+        .text-gradient-red-blue {
+            background: linear-gradient(135deg, #FF4D4D 0%, #00B4D8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gradient-red-blue {
+            background: linear-gradient(135deg, #E63946 0%, #0077B6 100%);
+        }
+
+        .btn-glow-red {
+            background: linear-gradient(135deg, #E63946 0%, #B71C1C 100%);
+            box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glow-red:hover {
+            box-shadow: 0 6px 28px rgba(230, 57, 70, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .btn-glow-blue {
+            background: linear-gradient(135deg, #0077B6 0%, #023E8A 100%);
+            box-shadow: 0 4px 20px rgba(0, 119, 182, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glow-blue:hover {
+            box-shadow: 0 6px 28px rgba(0, 119, 182, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0F1D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0077B6;
+        }
+    </style>
+</head>
+<body class="bg-darkNavy text-slate-100 font-sans antialiased selection:bg-brandRed selection:text-white overflow-x-hidden">
+
+    <!-- Glowing Background Lights -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-brandRed/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow z-0"></div>
+    <div class="fixed bottom-0 right-1/4 w-[30rem] h-[30rem] bg-brandBlue/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow z-0" style="animation-delay: 2s;"></div>
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <img src="https://oasis-hvac.com/wp-content/uploads/al_opt_content/IMAGE/oasis-hvac.com/wp-content/uploads/2026/01/image_68559430b13a102537884b26-1536.png.bv.webp" 
+                         alt="Oasis Heating & Air Conditioning LLC" 
+                         class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                         onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('logo-fallback').classList.remove('hidden');">
+                    
+                    <!-- Fallback logo if image fails -->
+                    <div id="logo-fallback" class="hidden flex items-center space-x-2">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-red-blue flex items-center justify-center font-bold text-white text-xl shadow-neon-blue">
+                            O
+                        </div>
+                        <span class="text-xl font-bold tracking-tight text-white">OASIS <span class="text-brandBlue">HVAC</span></span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-semibold tracking-wide text-slate-300 hover:text-brandIce transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-semibold tracking-wide text-slate-300 hover:text-brandIce transition-colors">About</a>
+                    <a href="#services" class="text-sm font-semibold tracking-wide text-slate-300 hover:text-brandIce transition-colors">Services</a>
+                    <a href="#reviews" class="text-sm font-semibold tracking-wide text-slate-300 hover:text-brandIce transition-colors">Reviews</a>
+                    <a href="#contact" class="text-sm font-semibold tracking-wide text-slate-300 hover:text-brandIce transition-colors">Contact</a>
+                </nav>
+
+                <!-- Call Button / CTA -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="tel:+18005550199" class="flex items-center space-x-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors mr-2">
+                        <i class="fa-solid fa-phone text-brandRed"></i>
+                        <span>Emergency Service</span>
+                    </a>
+                    <a href="#contact" class="btn-glow-red text-white text-sm font-bold py-2.5 px-5 rounded-full uppercase tracking-wider">
+                        Get Estimate
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/60 hover:text-white">Home</a>
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/60 hover:text-white">About</a>
+            <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/60 hover:text-white">Services</a>
+            <a href="#reviews" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/60 hover:text-white">Reviews</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/60 hover:text-white">Contact</a>
+            <div class="pt-2 flex flex-col space-y-3">
+                <a href="#contact" class="btn-glow-red text-center text-white font-bold py-3 px-4 rounded-xl text-sm tracking-wider uppercase">
+                    Get Estimate
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+            <!-- Background Image with Luxury Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://cdn.prod.website-files.com/65527c4544ad4082a0d5711a/68b93a4b2ce33fb0f496a5f3_Cutting-Costs-900X600.jpg" 
+                     alt="HVAC Comfort Hero Background" 
+                     class="w-full h-full object-cover object-center scale-105 transform filter brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-r from-darkNavy/95 via-darkNavy/80 to-darkNavy/70"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-darkNavy via-transparent to-darkNavy/60"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Text -->
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border border-brandBlue/30 text-brandIce text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                            <span class="flex h-2 w-2 rounded-full bg-brandRed animate-ping"></span>
+                            <span>24/7 Premium HVAC Solutions</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                            Mastering <span class="text-gradient-red-blue">Climate Control</span> For Your Ultimate Comfort
+                        </h1>
+
+                        <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Oasis Heating & Air Conditioning LLC delivers high-efficiency cooling, precision heating, and air quality perfection tailored for luxury homes and commercial spaces.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#contact" class="btn-glow-red w-full sm:w-auto px-8 py-4 rounded-xl text-white font-bold text-base tracking-wide flex items-center justify-center space-x-3 group">
+                                <span>Schedule Service</span>
+                                <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                            <a href="#services" class="btn-glow-blue w-full sm:w-auto px-8 py-4 rounded-xl text-white font-bold text-base tracking-wide flex items-center justify-center space-x-3">
+                                <i class="fa-solid fa-list-check"></i>
+                                <span>Explore Services</span>
+                            </a>
+                        </div>
+
+                        <!-- Key Highlights -->
+                        <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                            <div class="text-center lg:text-left">
+                                <p class="text-2xl sm:text-3xl font-extrabold text-white">100%</p>
+                                <p class="text-xs sm:text-sm text-slate-400">Guaranteed Work</p>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <p class="text-2xl sm:text-3xl font-extrabold text-brandIce">24/7</p>
+                                <p class="text-xs sm:text-sm text-slate-400">Emergency Response</p>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <p class="text-2xl sm:text-3xl font-extrabold text-brandRed">Licensed</p>
+                                <p class="text-xs sm:text-sm text-slate-400">& Certified Pros</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Quick Form Card -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-700/50 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-brandBlue/20 rounded-full blur-2xl pointer-events-none"></div>
+                            
+                            <h3 class="text-2xl font-bold text-white mb-2">Request Fast Quote</h3>
+                            <p class="text-sm text-slate-400 mb-6">Get an immediate response from our master technician team.</p>
+
+                            <form id="hero-quote-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Full Name</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Phone Number</label>
+                                    <input type="tel" required placeholder="(555) 000-0000" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Service Needed</label>
+                                    <select class="w-full px-4 py-3 rounded-xl bg-slate-900 text-white border border-slate-700 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue transition">
+                                        <option value="ac">Air Conditioner Service</option>
+                                        <option value="hvac">HVAC Contracting & Install</option>
+                                        <option value="water-heater">Water Heater Service</option>
+                                        <option value="emergency">Emergency Repair</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full btn-glow-red text-white font-bold py-3.5 rounded-xl uppercase tracking-wider text-sm transition mt-2">
+                                    Request Call Back
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 relative bg-slate-950/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Image Grid/Card -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative z-10 rounded-3xl overflow-hidden glass-card border border-slate-700/50 shadow-2xl group">
+                            <img src="https://avatars.mds.yandex.net/i?id=b617d3432bb4c3799c05a12bb532052908d0de84-8497450-images-thumbs&n=13" 
+                                 alt="Oasis HVAC Expert Technician" 
+                                 class="w-full h-[420px] object-cover object-center transform transition duration-700 group-hover:scale-105"
+                                 onerror="this.src='https://placehold.co/800x600/0f172a/0077b6?text=Oasis+HVAC+Expert+Technicians'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-darkNavy via-transparent to-transparent opacity-80"></div>
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass-panel border border-slate-600/40 flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-brandRed/20 flex items-center justify-center text-brandRed text-2xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white text-base">Unmatched Excellence</p>
+                                    <p class="text-xs text-slate-300">Certified technicians & state-of-the-art HVAC technology.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accent Lights -->
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-brandRed/30 rounded-full blur-2xl z-0"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brandBlue/30 rounded-full blur-2xl z-0"></div>
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full glass-card border border-brandRed/30 text-brandRed text-xs font-bold tracking-wider uppercase">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                            <span>About Oasis Heating & Air Conditioning LLC</span>
+                        </div>
+
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                            Your Trusted Partner for <span class="text-gradient-red-blue">Year-Round Comfort</span>
+                        </h2>
+
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                            At <strong>Oasis Heating & Air Conditioning LLC</strong>, we believe climate control is more than just temperature—it’s about creating a safe, energy-efficient, and luxurious living environment for your home or business.
+                        </p>
+
+                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                            Backed by years of hands-on experience, advanced diagnostic tools, and an unwavering commitment to transparent pricing, our certified technicians ensure every furnace, heat pump, air handler, and water heater operates at peak performance.
+                        </p>
+
+                        <!-- Features List -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <div class="flex items-start space-x-3 p-3 rounded-xl glass-card">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Certified Technicians</h4>
+                                    <p class="text-xs text-slate-400">Rigorously trained experts.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 rounded-xl glass-card">
+                                <i class="fa-solid fa-circle-check text-brandRed text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Transparent Pricing</h4>
+                                    <p class="text-xs text-slate-400">No hidden surprises.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 rounded-xl glass-card">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Energy Efficiency</h4>
+                                    <p class="text-xs text-slate-400">Lower monthly utility bills.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 rounded-xl glass-card">
+                                <i class="fa-solid fa-circle-check text-brandRed text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Rapid Response</h4>
+                                    <p class="text-xs text-slate-400">On-time service guaranteed.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full glass-card border border-brandBlue/30 text-brandIce text-xs font-bold tracking-wider uppercase">
+                        <i class="fa-solid fa-gears"></i>
+                        <span>Our Specialized Solutions</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Precision <span class="text-gradient-red-blue">HVAC Services</span>
+                    </h2>
+                    <p class="text-slate-400 text-base sm:text-lg">
+                        From whole-home climate design to urgent repairs, we deliver premier solutions built to last.
+                    </p>
+                </div>
+
+                <!-- 3 Services Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Service 1 -->
+                    <div class="glass-card rounded-3xl overflow-hidden group border border-slate-700/60 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="https://avatars.mds.yandex.net/i?id=0a509c5260fa2eef7cfa2a592f805d8a4cc716d4-4120171-images-thumbs&n=13" 
+                                     alt="HVAC Contractor Services" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                     onerror="this.src='https://placehold.co/600x400/0f172a/e63946?text=HVAC+Contractor'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkNavy via-transparent to-transparent opacity-80"></div>
+                                <span class="absolute top-4 right-4 bg-brandRed text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                    Full Contracting
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-brandRed/10 border border-brandRed/30 flex items-center justify-center text-brandRed font-bold">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brandIce transition-colors">HVAC Contractor</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Comprehensive system installations, retrofits, commercial ductwork, and complete heating system engineering designed for optimal efficiency and long-term durability.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="#contact" class="inline-flex items-center text-sm font-bold text-brandRed hover:text-white transition-colors group/btn">
+                                <span>Book Contractor Service</span>
+                                <i class="fa-solid fa-chevron-right ml-2 text-xs transition-transform group-hover/btn:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="glass-card rounded-3xl overflow-hidden group border border-slate-700/60 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="https://avatars.mds.yandex.net/i?id=d30e3812965ecc6e30b1e7ee3b24d812e68e9cc4-13529499-images-thumbs&n=13" 
+                                     alt="Air Conditioner Service" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                     onerror="this.src='https://placehold.co/600x400/0f172a/0077b6?text=AC+Service'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkNavy via-transparent to-transparent opacity-80"></div>
+                                <span class="absolute top-4 right-4 bg-brandBlue text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                    Cooling Experts
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-brandBlue/10 border border-brandBlue/30 flex items-center justify-center text-brandBlue font-bold">
+                                    <i class="fa-regular fa-snowflake"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brandIce transition-colors">Air Conditioner Service</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Rapid AC repair, precision Freon tune-ups, filter replacements, and ductless mini-split setups to keep your indoor spaces crisp and refreshing all summer.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="#contact" class="inline-flex items-center text-sm font-bold text-brandBlue hover:text-white transition-colors group/btn">
+                                <span>Book AC Tune-Up</span>
+                                <i class="fa-solid fa-chevron-right ml-2 text-xs transition-transform group-hover/btn:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="glass-card rounded-3xl overflow-hidden group border border-slate-700/60 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="https://avatars.mds.yandex.net/i?id=ef6eb2ead1e88bcf71a302f001ed84756846cb4e-4303250-images-thumbs&n=13" 
+                                     alt="Water Heater Service" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                     onerror="this.src='https://placehold.co/600x400/0f172a/e63946?text=Water+Heater+Service'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkNavy via-transparent to-transparent opacity-80"></div>
+                                <span class="absolute top-4 right-4 bg-amber-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                    Hot Water Solutions
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 font-bold">
+                                    <i class="fa-solid fa-faucet-drip"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brandIce transition-colors">Water Heater Service</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Tankless and traditional water heater installation, flushing, element repair, and emergency leak troubleshooting for instant, endless hot water.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="#contact" class="inline-flex items-center text-sm font-bold text-amber-400 hover:text-white transition-colors group/btn">
+                                <span>Schedule Heater Repair</span>
+                                <i class="fa-solid fa-chevron-right ml-2 text-xs transition-transform group-hover/btn:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Testimonials / Customer Reviews Section -->
+        <section id="reviews" class="py-24 relative bg-slate-950/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full glass-card border border-brandRed/30 text-brandRed text-xs font-bold tracking-wider uppercase">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Client Testimonials</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        What Our <span class="text-gradient-red-blue">Customers Say</span>
+                    </h2>
+                    <p class="text-slate-400 text-base sm:text-lg">
+                        Read verified reviews from homeowners and businesses who rely on Oasis HVAC.
+                    </p>
+                </div>
+
+                <!-- Reviews Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Review 1 -->
+                    <div class="glass-card p-8 rounded-3xl border border-slate-700/50 flex flex-col justify-between relative">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-300 text-sm italic leading-relaxed">
+                                "Oasis HVAC saved our summer! Our central AC unit broke down during a heatwave, and their technician arrived within 2 hours. Honest diagnosis and fixed it quickly!"
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-800 flex items-center space-x-3 mt-6">
+                            <div class="w-11 h-11 rounded-full bg-gradient-red-blue flex items-center justify-center font-bold text-white">
+                                RS
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Robert S.</h4>
+                                <p class="text-xs text-slate-400">Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="glass-card p-8 rounded-3xl border border-slate-700/50 flex flex-col justify-between relative">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-300 text-sm italic leading-relaxed">
+                                "Upgraded to a tankless water heater through Oasis Heating & Air Conditioning. The craftsmanship was clean, professional, and our energy bills have noticeably dropped."
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-800 flex items-center space-x-3 mt-6">
+                            <div class="w-11 h-11 rounded-full bg-brandBlue flex items-center justify-center font-bold text-white">
+                                ML
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Michelle L.</h4>
+                                <p class="text-xs text-slate-400">Verified Customer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="glass-card p-8 rounded-3xl border border-slate-700/50 flex flex-col justify-between relative">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-300 text-sm italic leading-relaxed">
+                                "Extremely professional HVAC contractors. They handled the commercial installation for our retail storefront seamlessly. Highest recommendation for quality work."
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-800 flex items-center space-x-3 mt-6">
+                            <div class="w-11 h-11 rounded-full bg-brandRed flex items-center justify-center font-bold text-white">
+                                DK
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">David K.</h4>
+                                <p class="text-xs text-slate-400">Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Contact Info -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full glass-card border border-brandBlue/30 text-brandIce text-xs font-bold tracking-wider uppercase mb-4">
+                                <i class="fa-solid fa-headset"></i>
+                                <span>Get In Touch</span>
+                            </div>
+                            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                                Let's Fix Your <span class="text-gradient-red-blue">Comfort Today</span>
+                            </h2>
+                            <p class="text-slate-400 text-base mt-3">
+                                Contact Oasis Heating & Air Conditioning LLC for estimates, emergency repairs, or routine maintenance.
+                            </p>
+                        </div>
+
+                        <!-- Info Cards -->
+                        <div class="space-y-4">
+                            
+                            <div class="glass-card p-5 rounded-2xl flex items-center space-x-4 border border-slate-700/50">
+                                <div class="w-12 h-12 rounded-xl bg-brandRed/20 flex items-center justify-center text-brandRed text-xl">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-semibold uppercase text-slate-400">Company</h4>
+                                    <p class="text-base font-bold text-white">Oasis Heating & Air Conditioning LLC</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-5 rounded-2xl flex items-center space-x-4 border border-slate-700/50">
+                                <div class="w-12 h-12 rounded-xl bg-brandBlue/20 flex items-center justify-center text-brandBlue text-xl">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-semibold uppercase text-slate-400">Email Us</h4>
+                                    <a href="mailto:info@oasis-hvac.com" class="text-base font-bold text-white hover:text-brandIce transition-colors">info@oasis-hvac.com</a>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-5 rounded-2xl flex items-center space-x-4 border border-slate-700/50">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-semibold uppercase text-slate-400">Call Us 24/7</h4>
+                                    <a href="tel:+18005550199" class="text-base font-bold text-white hover:text-brandIce transition-colors">(800) 555-0199</a>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-5 rounded-2xl flex items-center space-x-4 border border-slate-700/50">
+                                <div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 text-xl">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-semibold uppercase text-slate-400">Service Location</h4>
+                                    <p class="text-base font-bold text-white">Milwaukee, WI & Surrounding Areas</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-panel p-8 rounded-3xl border border-slate-700/60 shadow-2xl relative">
+                            <h3 class="text-2xl font-bold text-white mb-2">Send Us A Message</h3>
+                            <p class="text-slate-400 text-sm mb-6">Fill out the form below and an HVAC technician will contact you shortly.</p>
+
+                            <form id="main-contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Your Name</label>
+                                        <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-brandRed focus:ring-1 focus:ring-brandRed transition">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Email Address</label>
+                                        <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-brandRed focus:ring-1 focus:ring-brandRed transition">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Phone Number</label>
+                                    <input type="tel" required placeholder="(555) 000-0000" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-brandRed focus:ring-1 focus:ring-brandRed transition">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Service Request / Message</label>
+                                    <textarea rows="4" required placeholder="Describe your issue or installation requirements..." class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-brandRed focus:ring-1 focus:ring-brandRed transition"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full btn-glow-red text-white font-bold py-4 rounded-xl uppercase tracking-wider text-sm transition">
+                                    Submit Request
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section with GMB Map Embed -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 pt-16 pb-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <!-- Map Container -->
+            <div class="rounded-3xl overflow-hidden glass-card border border-slate-800 shadow-2xl p-2">
+                <p class="text-xs uppercase font-semibold text-slate-400 p-2"><i class="fa-solid fa-map-pin text-brandRed mr-2"></i> Our Service Location Map (GMB)</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.730268186761!2d-87.9184271!3d43.089165799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88051f6bf067a945%3A0x158c8a64ed1a7a20!2sOasis%20Heating%20%26%20Air%20Conditioning%20LLC!5e0!3m2!1sen!2s!4v1792086136752!5m2!1sen!2s" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0; border-radius: 1rem;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            </div>
+
+            <!-- Footer Navigation & Details -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pt-6">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <a href="#home" class="inline-block">
+                        <img src="https://oasis-hvac.com/wp-content/uploads/al_opt_content/IMAGE/oasis-hvac.com/wp-content/uploads/2026/01/image_68559430b13a102537884b26-1536.png.bv.webp" 
+                             alt="Oasis Heating & Air Conditioning LLC" 
+                             class="h-10 w-auto object-contain"
+                             onerror="this.onerror=null; this.classList.add('hidden');">
+                    </a>
+                    <p class="text-slate-400 text-sm max-w-md leading-relaxed">
+                        Oasis Heating & Air Conditioning LLC delivers premium luxury heating, ventilation, air conditioning, and water heater solutions with superior customer satisfaction guarantees.
+                    </p>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Quick Navigation</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#home" class="hover:text-brandIce transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-brandIce transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-brandIce transition-colors">HVAC Services</a></li>
+                        <li><a href="#reviews" class="hover:text-brandIce transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-brandIce transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Our Services</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#services" class="hover:text-brandRed transition-colors">HVAC Contracting</a></li>
+                        <li><a href="#services" class="hover:text-brandBlue transition-colors">Air Conditioner Repair</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition-colors">Water Heater Repair</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">24/7 Emergency Service</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-8 border-t border-slate-800/80 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; <span id="year"></span> Oasis Heating & Air Conditioning LLC. All rights reserved.</p>
+                <p>Designed for Web 2.0 High Performance &amp; GitHub Pages</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Notification Toast Box -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 glass-panel px-6 py-4 rounded-2xl border border-brandBlue/40 text-white shadow-2xl transform translate-y-24 opacity-0 transition-all duration-300 flex items-center space-x-3 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <span id="toast-message" class="text-sm font-semibold">Message sent successfully!</span>
+    </div>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        // Set copyright year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
